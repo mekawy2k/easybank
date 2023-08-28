@@ -1,0 +1,21 @@
+@import 'vars';
+@import 'mixins';
+@import 'globals';
+@import 'animations';
+@import 'header';
+@import 'hero';
+@import 'why';
+@import 'latest';
+@import 'footer';
+*{
+    box-sizing: border-box;
+}
+:root{
+    font-size: 16px;
+}
+body{
+    font-family: $font-family;
+    font-size: 1.125rem;
+    font-weight: 300;
+    color: $grayish-blue;
+}

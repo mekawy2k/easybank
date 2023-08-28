@@ -1,0 +1,54 @@
+.container {
+  padding-inline: 1rem;
+  max-width: 75rem;
+  margin-inline: auto;
+}
+/* Flex Container */
+.flex {
+  display: flex;
+}
+
+/* Justify Content: Space Between */
+.flex.jc-sb {
+  justify-content: space-between;
+}
+
+/* Justify Content: Center */
+.flex.jc-c {
+  justify-content: center;
+}
+
+/* Align Items: Center */
+.flex.ai-c {
+  align-items: center;
+}
+
+/* Flex Direction: Column */
+.flex.col {
+  flex-direction: column;
+}
+
+/* Flex Direction: Row */
+.flex.row {
+  flex-direction: row;
+}
+
+/* Center Content Horizontally and Vertically */
+.flex.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile{
+    @include md{
+        display: none;
+    }
+}
+.desktop{
+    @include br-down('md'){
+        display: none;
+    }
+}
+section{
+    @include container;
+}

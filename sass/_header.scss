@@ -1,0 +1,102 @@
+header {
+  height: 5rem;
+  .overlay {
+    position: absolute;
+    height: calc(100vh - 5rem);
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    inset-block-start: 5rem;
+    background-image: linear-gradient(to bottom, $dark-blue, $grayish-blue);
+    @extend .mobile;
+    z-index: 99;
+  }
+  & .nav {
+    height: inherit;
+    background: $white;
+    @include flex;
+    @include jc-sb;
+    @include ai-c;
+    @include container;
+    &__links {
+      z-index: 100;
+      height: inherit;
+      @include flex;
+      gap: 1rem;
+      @include br-down("md") {
+        position: absolute;
+        height: fit-content;
+        gap: 1rem;
+        padding: 1rem;
+        top: 6rem;
+        background-color: $white;
+        width: 90%;
+        max-width: 420px;
+        left: 50%;
+        border-radius: 0.5rem;
+        transform: translateX(-50%);
+        justify-content: space-evenly;
+        @include ai-c;
+        @include col;
+        visibility: hidden;
+      }
+      & a {
+        display: block;
+        flex: 1 0 20%;
+        @include flex;
+        @include ai-c;
+        height: 100%;
+        text-decoration: none;
+        color: $grayish-blue;
+        @include jc-c;
+        &:hover {
+          color: $dark-blue;
+          border-bottom: 2px solid $lime-green;
+        }
+      }
+    }
+    &__ctr , .ctr{
+      @extend .desktop;
+      background-color: $white;
+      border: 0;
+      border-radius: 2rem;
+      background-image: linear-gradient(to right, $lime-green, $bright-cyan);
+      padding: 1rem;
+      color: $white;
+      height: 3rem;
+      cursor: pointer;
+    }
+    &__menu,
+    &__menu:active {
+      @extend .mobile;
+      width: 1.75rem;
+      aspect-ratio: 1/1;
+      background: $white;
+      border: 0;
+      background-image: url(/images/icon-close.svg);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      rotate: 180deg;
+      transition: rotate 400ms ease-in-out;
+    }
+  }
+  &:not(.active) {
+    & .nav {
+      &__menu {
+        rotate: 0deg;
+        background-image: url(/images/icon-hamburger.svg);
+      }
+    }
+  }
+  &.active {
+    & .overlay {
+      visibility: visible;
+      opacity: 0.8 !important
+    }
+    & .nav__links {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.why{
+    background: $very-light-gray;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-weight: 300;
+    text-align: center;
+    padding-block: 2rem;
+    @include md{
+        text-align: start;
+    }
+    h1{
+        color: $dark-blue;
+        font-weight: 300;
+        font-size: 3rem;
+        text-align: inherit;
+    }
+    &__list{
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(15.9375rem,1fr));
+        justify-content: center;
+        & div{
+            padding: 1rem;
+            h2{
+                font-size: 1.5rem;
+                font-weight: 300;
+                color: $dark-blue;
+            }
+            p{
+                font-weight: 300;
+                font-size: 1rem;
+            }
+            i{
+                img{
+                    width: 4rem;
+                }
+            }
+        }
+    }
+}

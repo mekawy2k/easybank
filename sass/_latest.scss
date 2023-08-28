@@ -1,0 +1,56 @@
+.latest {
+  background: $light-grayish-blue;
+  padding-block: 2rem;
+  & h1 {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 300;
+    color: $dark-blue;
+    padding-block:2rem ;
+    @include br-down(md){
+        text-align: center;
+    }
+  }
+  & .list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,15.9375rem);
+    justify-content: space-between;
+    @include br-down(md){
+        justify-content: space-evenly;
+    }
+    row-gap: 1.5rem;
+    & .card {
+      background: $white;
+      width: 15.9375rem;
+      &__img {
+        width: 15.9375rem;
+        height: 12.5rem;
+        & img {
+          width: 100%;
+          aspect-ratio: 255/200;
+        }
+      }
+      .card__content {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.5rem;
+        & span {
+          font-size: 0.565rem;
+          font-weight: 400;
+        }
+        & h3 {
+          font-size: 1rem;
+          font-weight: 300;
+          color: $dark-blue;
+          margin: 0;
+        }
+        & p {
+          font-size: 0.75rem;
+          font-weight: 400;
+          margin: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+footer{
+    @include container;
+    padding-block: 1.5rem;
+    background: $dark-blue;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.2rem;
+    @include md{
+        padding-block: 2.4rem;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    & .links{
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.2rem;
+        @include md{
+            flex-direction: row;
+            align-items: center;
+            column-gap: 2rem;
+        }
+        &__logo{
+            display: flex;
+            flex-direction: column;
+            row-gap: 1.2rem;
+            &-logo {
+                justify-content: center;
+                display: flex;
+            }
+            &-social{
+                display: flex;
+                gap: 1.2rem;
+                justify-content: center;
+            }
+            @include md{
+                justify-content: space-between;
+                height: 100%;
+            }
+        }
+        & nav{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            row-gap: 1.2rem;
+            & a{
+                text-decoration: none;
+                text-align: center;
+                color: $grayish-blue;
+                font-size: 1rem;
+                font-weight: 300;
+                @include md{
+                    text-align: start;
+                }
+            }
+            @include md{
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+                justify-content: start;
+            }
+            @include lg{
+                column-gap: 3rem;
+                margin-inline-start: 2rem;
+            }
+        }
+    }
+    & .coppy{
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.2rem;
+        justify-content: center;
+        & div{
+            font-size: 1rem;
+            text-align: center;
+        }
+    }
+}
